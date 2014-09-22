@@ -1,0 +1,74 @@
+@import "../bootstrap_less/variables";
+@import "../bootstrap_less/mixins";
+@import "../bootstrap_less/bootstrap";
+
+#sort-table tbody {
+	tr {
+		&:nth-child(1) span {
+			background-color: @gray-darker;
+		}
+		&:nth-child(2) span {
+			background-color: lighten(@gray-darker, 10%);
+		}
+		&:nth-child(3) span {
+			background-color: lighten(@gray-darker, 15%);
+		}
+		&:nth-child(4) span {
+			background-color: lighten(@gray-darker, 20%);
+		}
+		&:nth-child(5) span {
+			background-color: lighten(@gray-darker, 25%);
+		}
+		&:nth-child(6) span {
+			background-color: lighten(@gray-darker, 30%);
+		}
+		&:nth-child(7) span {
+			background-color: lighten(@gray-darker, 35%);
+		}
+		&:nth-child(8) span {
+			background-color: lighten(@gray-darker, 40%);
+		}
+		&:nth-child(9) span {
+			background-color: lighten(@gray-darker, 45%);
+		}
+		&:nth-child(10) span {
+			background-color: lighten(@gray-darker, 50%);
+		}
+		&.first-sort {
+			span {
+				background-color: @brand-primary;
+				color: white;
+			}
+			strong {
+				color: @brand-primary;;
+			}
+		}
+		&.second-sort {
+			span {
+				background-color: darken(@brand-primary, 20%);
+				color: white;
+			}
+			strong {
+				color: darken(@brand-primary, 20%);
+			}
+		}
+
+	}
+	td {
+		padding: 0;
+		text-align: center;
+		vertical-align: middle;
+		line-height: 100%;
+		span {
+			font-size: 18px;
+			font-weight: 200;
+			color: #ffffff;
+			display: block;
+			height: 35px;
+		}
+	}
+}
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="bubbleApp">
+<head>
+    <title>
+        Angular Bubble Sort Simulation
+    </title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/site-theme.css" />
+
+    <!-- Scripts -->
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/app.js"></script>
+
+</head>
+<body>
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-push-2">
+                    <h1>Bubble Sort Simulation</h1>
+                    <p>In AngularJS and PHP</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" ng-controller="bubbleCtrl">
+        <div class="row">
+            <div class="col-sm-12">
+                <hr/>
+
+		                <aside ng-show="sorted">
+			                <h3 class="alert alert-success text-center">All Numbers Sorted!</h3>
+		                </aside>
+	                    <aside class="text-center text-muted" ng-hide="numbers">
+		                    <h2>Click the <strong class="text-primary">Shuffle</strong> button to start the application!</h2>
+	                    </aside>
+			            <table id="sort-table" class="table table-bordered text-center" ng-show="numbers">
+				            <thead>
+				            <tr>
+					            <td colspan="2">
+						            <h4>Numbers to be Sorted</h4>
+					            </td>
+				            </tr>
+				            </thead>
+				            <tbody>
+			                    <tr ng-repeat="n in numbers"
+			                            ng-class="{'first-sort': $index == return, 'second-sort': (return && $index == (return + 1))}">
+				                    <td width="10%">
+					                    <strong>{{n}}</strong>
+				                    </td>
+				                    <td>
+					                    <span style="width: {{n}}%;"></span>
+				                    </td>
+			                    </tr>
+		                    </tbody>
+                        </table>
+                <hr/>
+                <aside class="text-center">
+                    <button class="btn btn-primary" ng-click="random()">Shuffle</button>
+
+                    <button class="btn btn-success" ng-click="stepSort()" ng-class="{disabled: !numbers}">Step</button>
+
+                    <button class="btn btn-success" ng-click="playSort()" ng-class="{disabled: !numbers}" ng-hide="playing">Play</button>
+
+                    <button class="btn btn-danger" ng-click="stop()" ng-show="playing">Stop</button>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
