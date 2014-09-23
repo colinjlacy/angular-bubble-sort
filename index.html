@@ -45,7 +45,7 @@
 				            </tr>
 				            </thead>
 				            <tbody>
-			                    <tr ng-repeat="n in numbers"
+			                    <tr ng-repeat="n in numbers track by $index"
 			                            ng-class="{'first-sort': $index == return, 'second-sort': (return && $index == (return + 1))}">
 				                    <td width="10%">
 					                    <strong>{{n}}</strong>
