@@ -4,7 +4,7 @@ This is a quick Bubble Sort demo in the style of your standard CS 101 assignment
 
 ##Why?##
 
-Not too long ago it came up in conversation that this is a common assignment in Computer Science programs.  So when it came time for me to whip one up, I thought I'd use some of the skills I've been working on to give it a modern touch.  Granted, all of the scripts that take place in PHP could easily be done with Angular as well, but it was good exercise to force my hand into some back-end work and make an AJAXy program instead of one that's entirely front-end.
+Not too long ago it came up in conversation that this is a common assignment in Computer Science programs.  So when it came time for me to whip one up, I thought I'd use some of the skills I've been working on to give it a modern touch.  
 
 ###Interested?###
 
