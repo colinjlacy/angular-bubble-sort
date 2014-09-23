@@ -26,6 +26,8 @@ angular.module("bubbleApp", [])
         $scope.stepSort = function() {
             bubbleSrvc.stepSort($scope.numbers[$scope.active], $scope.numbers[$scope.active + 1]).then(function(data) {
                 // the next two lines re-order the two numbers sent by the back-end accordingly
+				console.log($scope.numbers[$scope.active]+", "+$scope.numbers[$scope.active + 1]+" -- "+data[0]+", "+data[1]);
+
                 $scope.numbers[$scope.active] = data[0];
                 $scope.numbers[$scope.active + 1] = data[1];
 
@@ -62,7 +64,7 @@ angular.module("bubbleApp", [])
             // set the interval
             $scope.runningTimer = setInterval(function () {
                 $scope.stepSort();
-            }, 200); // happens every 200 milliseconds
+            }, 500); // happens every 200 milliseconds
         };
 
         $scope.stop = function() {
