@@ -24,6 +24,10 @@ angular.module("bubbleApp", [])
 		};
 
         $scope.stepSort = function() {
+            // let the world know the app is working
+            $scope.working = true;
+
+            // get those numbers from the backend
             bubbleSrvc.stepSort($scope.numbers[$scope.active], $scope.numbers[$scope.active + 1]).then(function(data) {
                 // the next two lines re-order the two numbers sent by the back-end accordingly
 				console.log($scope.numbers[$scope.active]+", "+$scope.numbers[$scope.active + 1]+" -- "+data[0]+", "+data[1]);
@@ -33,6 +37,9 @@ angular.module("bubbleApp", [])
 
                 // this line helps with styling by marking the row (and consequently the row following) that was just returned
                 $scope.return = $scope.active;
+
+                // looks like you're no longer working
+                $scope.working = false;
 
                 // did that accomplish the goal? Check with a server-side validation
                 bubbleSrvc.sortCheck($scope.numbers).then(function(boolean) {
@@ -63,8 +70,12 @@ angular.module("bubbleApp", [])
 
             // set the interval
             $scope.runningTimer = setInterval(function () {
+                if ($scope.working) {
+                    // prevents any collisions in the AJAX call
+                    return;
+                }
                 $scope.stepSort();
-            }, 500); // happens every 200 milliseconds
+            }, 500); // happens every 500 milliseconds
         };
 
         $scope.stop = function() {

@@ -5833,3 +5833,6 @@ button.close {
   margin-left: auto;
   margin-right: auto;
 }
+main {
+	margin-bottom: 3rem;
+}

@@ -60,7 +60,7 @@
                 <aside class="text-center">
                     <button class="btn btn-primary" ng-click="random()">Shuffle</button>
 
-                    <button class="btn btn-success" ng-click="stepSort()" ng-class="{disabled: !numbers}">Step</button>
+                    <button class="btn btn-success" ng-click="stepSort()" ng-class="{disabled: (!numbers || working)}">Step</button>
 
                     <button class="btn btn-success" ng-click="playSort()" ng-class="{disabled: !numbers}" ng-hide="playing">Play</button>
 
