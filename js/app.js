@@ -111,7 +111,7 @@ angular.module("bubbleApp", [])
                 var numbers = $q.defer();
                 $http ({
                     method: 'POST',
-                    url: 'server/sort.php',
+                    url: 'server/arrange.php',
                     data: [first, second]
                 }).success(function(data) {
                     numbers.resolve(data);
